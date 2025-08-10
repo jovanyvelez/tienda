@@ -200,7 +200,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  bottom: 0;
+  height: 6rem; /* Solo la altura del header */
   background-color: #ec3a3a;
   z-index: 9999;
   display: flex;
@@ -214,7 +214,7 @@ body {
 }
 
 .mobile-search-bar {
-  height: 6rem;
+  height: 100%; /* Ocupar toda la altura del overlay (6rem) */
   padding: 0 0.75rem;
   display: flex;
   align-items: center;
@@ -266,38 +266,6 @@ body {
 
 .search-input-container input[type="search"]::placeholder {
   color: #888;
-}
-
-.mobile-search-results {
-  flex: 1;
-  background: white;
-  margin: 0 0.75rem 0.75rem 0.75rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  overflow-y: auto;
-}
-
-.mobile-search-results a {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.75rem 1rem;
-  text-decoration: none;
-  color: #333;
-  border-bottom: 1px solid #f0f0f0;
-  transition: background-color 0.2s;
-}
-
-.mobile-search-results a:hover {
-  background-color: #f8f9fa;
-}
-
-.mobile-search-results a:last-child {
-  border-bottom: none;
-}
-
-.mobile-search-results img {
-  opacity: 0.5;
 }
 
 /* ========== RESPONSIVE: MÓVIL (< 576px) ========== */
