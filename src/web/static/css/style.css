@@ -409,19 +409,19 @@ body {
 
 .carta {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(170px, 1fr)
-  );
-  gap: 1rem; /* mayor separación horizontal y vertical */
-  margin: 1.25rem auto; /* margen vertical aumentado (el anterior se sobreescribía) */
-  max-width: 80%;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 0.5rem; /* separación compacta para encajar 2 columnas en ~300px */
+  margin: 1rem auto;
+  /* Márgenes laterales fluidos: 8px en móvil, crecen hasta 40px en pantallas grandes */
+  padding: 0 clamp(8px, 4vw, 40px);
+  width: 100%;
+  max-width: 1100px; /* límite razonable en desktop, full-width en móvil */
 }
 
 .foto-box {
   background: #ffffff;
   border-radius: 12px;
-  padding: 8px; /* pequeño padding para que supere mínimamente el ancho de la imagen */
+  padding: 4px; /* padding mínimo para que quepan 2 columnas a ~300px */
   box-shadow: 0 1px 3px rgba(0,0,0,0.06);
   display: flex;
   align-items: center;
@@ -437,8 +437,10 @@ body {
 
 .foto {
   border-radius: 8px;
-  width: 160px;
-  height: 160px;
-  object-fit: contain;
+  width: 100%;
+  aspect-ratio: 1 / 1; /* cuadrado uniforme */
+  object-fit: contain; /* encajar sin recortar */
   display: block;
 }
+
+/* Sin media queries: la grilla fluye con auto-fit + minmax */
